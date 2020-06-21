@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-   <h1>	Hello, I'm a first Vue/Nuxt app</h1>
+    <a href="/users">Users with href</a>
+    <nuxt-link to="/users">Users with Nuxt link</nuxt-link>
+    <button @click="onLoadProducts">Go to products</button>
   </div>
 </template>
 
@@ -10,6 +12,11 @@ import Logo from '~/components/Logo.vue'
 export default {
   components: {
     Logo
+  },
+  methods: {
+    onLoadProducts() {
+      this.$router.push('/products')
+    }
   }
 }
 </script>
