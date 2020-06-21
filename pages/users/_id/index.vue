@@ -5,8 +5,10 @@
 
 <script>
 export default {
-  validate(data) {
-    return /ˆ\d+$/.test(data.params.id)
-  }
+  validate({ params, query, store }) {
+    // Must be a number
+    return /^\d+$/.test(params.id)
+  },
+  layout: 'users'
 };
 </script>
